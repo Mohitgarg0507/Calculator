@@ -1,0 +1,40 @@
+body {
+    background-color: white;
+}
+
+
+.Calculator_grid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+
+    
+}
+.output{
+    height: 75px;
+    border: 2px solid red;
+    text-align: right;
+    font-size: 3rem;
+    background-color: aliceblue;
+}
+
+.btn{
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    border: 2px solid red;
+    font-size: 3rem;
+
+}
+.btn:hover{
+    background-color: red;
+}
+
+.btn-primary{
+    width: 404px;
+    height: 100px;
+}
+
+
