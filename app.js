@@ -134,28 +134,54 @@ const dot_calc = document.querySelector(".dot");
 numbers_calc.forEach(button => {
     button.addEventListener('click', () => {
       a.update_number(button.innerText);
-      console.log(button.innerText);
+      //console.log(button.innerText);
     });
 });
 operations_calc.forEach(button => {
     button.addEventListener('click', () => {
       a.operation(button.innerText);
-      console.log(button.innerText);
+      //console.log(button.innerText);
     });
 });
 delete_calc.addEventListener('click',() =>{
     a.delete_last_char();
-    console.log(delete_calc.innerText);
+    //console.log(delete_calc.innerText);
 });
 equal_calc.addEventListener('click',() =>{
-    console.log(equal_calc.innerText);
+    //console.log(equal_calc.innerText);
     a.solution_calc();
 });
 all_clear_calc.addEventListener('click',() =>{
-    console.log(all_clear_calc.innerText);
+    //console.log(all_clear_calc.innerText);
     a.clear_all();
 });
 dot_calc.addEventListener('click',() =>{
-    console.log(dot_calc.innerText);
+    //console.log(dot_calc.innerText);
     a.append_dot();
 });
+document.addEventListener('keypress', (e) => {
+    //console.log(e.key);
+    if(e.key==1 ||e.key==0 ||e.key==2 ||e.key==3 ||e.key==4 ||e.key==5 ||e.key==6 ||e.key==7 ||e.key==8 ||e.key==9 ){
+        a.update_number(e.key);
+    }else if(e.key=='*' ||e.key=='/' ||e.key=='-' ||e.key=='+' ){
+        if(e.key=='/'){
+            a.operation('÷');
+        }else{
+            a.operation(e.key)
+        }
+    }else if(e.key=='='){
+        a.solution_calc();
+    }else if(e.key=='.'){
+        a.append_dot();
+    }
+})
+document.addEventListener('keydown',(e) => {
+   // console.log(e.key);
+    if(e.key == "Backspace"){
+        a.delete_last_char();
+    }else if(e.key == "Delete"){
+        a.clear_all();
+    }else if(e.key == "Enter"){
+        a.solution_calc();
+    }
+})
